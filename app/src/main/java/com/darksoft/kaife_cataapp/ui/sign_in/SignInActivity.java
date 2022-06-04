@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.darksoft.kaife_cataapp.MainActivity;
 import com.darksoft.kaife_cataapp.databinding.ActivitySignInBinding;
+import com.darksoft.kaife_cataapp.ui.sign_in_phone.SignInPhoneActivity;
 import com.darksoft.kaife_cataapp.ui.sign_up.SignUpActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -40,6 +41,11 @@ public class SignInActivity extends AppCompatActivity {
 
         binding.btnSignIn.setOnClickListener(v -> {
             signIn();
+        });
+
+        binding.btnPhone.setOnClickListener(v -> {
+            Intent intent = new Intent(this, SignInPhoneActivity.class);
+            startActivity(intent);
         });
 
         binding.textSignUp.setOnClickListener(v -> {

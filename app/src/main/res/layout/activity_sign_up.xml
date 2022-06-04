@@ -75,7 +75,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/correo_electronico_o_tel_fono"
+                android:hint="@string/correo_electronico"
                 app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText

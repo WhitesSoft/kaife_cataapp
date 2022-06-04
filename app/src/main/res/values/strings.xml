@@ -23,4 +23,9 @@
     <string name="crea_tu_cuenta">Crea tu cuenta</string>
     <string name="inicia_sesi_n_con_tu_cuenta">Inicia sesión con tu cuenta</string>
     <string name="cerrar_sesi_n">Cerrar Sesión</string>
+    <string name="o_inicia_sesi_n_con">O inicia sesión con</string>
+    <string name="n_mero_de_tel_fono">Número de teléfono</string>
+    <string name="enviar_c_digo">Enviar código</string>
+    <string name="introduzca_el_c_digo_recibido">Introduzca el código recibido</string>
+    <string name="verificar_c_digo">Verificar código</string>
 </resources>
