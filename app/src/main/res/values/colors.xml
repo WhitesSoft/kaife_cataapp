@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="primary">#598858</color>
-    <color name="background">#F7F7FA</color>
+    <color name="background">#FFFFFFFF</color>
     <color name="card_background">#FFFFFF</color>
     <color name="primary_text">#565B65</color>
     <color name="secundary_text">#9B9A9D</color>
