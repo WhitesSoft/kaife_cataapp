@@ -163,6 +163,7 @@ public class QuizzActivity extends AppCompatActivity {
             p7Answer2++;
     }
 
+    //Obtenemos las respuestas
     private String answer1(){
         if (p1Answer1 != 0)
             return "1";
