@@ -73,7 +73,6 @@ public class QuizzActivity extends AppCompatActivity {
             db.collection("Respuestas").document(user.getUid()).set(data);
             finish();
 
-
         }else {
             Toast.makeText(this, "Debe responder todas las preguntas", Toast.LENGTH_SHORT).show();
         }
