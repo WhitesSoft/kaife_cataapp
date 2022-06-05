@@ -70,7 +70,7 @@
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:layout_gravity="center">
 
                 <Button
@@ -78,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/enviar_c_digo"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginTop="4dp"/>
 
                 <ProgressBar
                     android:id="@+id/loading"
@@ -106,12 +106,29 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/btnVerify"
+            <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/verificar_c_digo"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="4dp"
+                android:layout_gravity="center">
+
+                <Button
+                    android:id="@+id/btnVerify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/verificar_c_digo"
+                    android:layout_marginTop="4dp"/>
+
+                <ProgressBar
+                    android:id="@+id/loadingVerify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"/>
+
+            </FrameLayout>
+
+
 
         </LinearLayout>
 

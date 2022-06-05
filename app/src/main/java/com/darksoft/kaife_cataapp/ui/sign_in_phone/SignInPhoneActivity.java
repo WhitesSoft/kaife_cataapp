@@ -54,6 +54,10 @@ public class SignInPhoneActivity extends AppCompatActivity {
 
     private void buttons() {
 
+        binding.back.setOnClickListener(v -> {
+            finish();
+        });
+
         binding.btnSendCode.setOnClickListener(v -> {
 
             number = binding.etPhone.getText().toString().trim();
@@ -84,8 +88,21 @@ public class SignInPhoneActivity extends AppCompatActivity {
             if (code.isEmpty())
                 Toast.makeText(this, "Ingrese el código enviado a su teléfono", Toast.LENGTH_SHORT).show();
             else{
+
+                binding.loadingVerify.setVisibility(View.VISIBLE);
+                binding.btnVerify.setVisibility(View.INVISIBLE);
+
                 credential = PhoneAuthProvider.getCredential(mVerificationId, code);
                 signInWithPhoneAuthCredential(credential);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        binding.loadingVerify.setVisibility(View.INVISIBLE);
+                        binding.btnVerify.setVisibility(View.VISIBLE);
+                    }
+                },60000);
+
             }
 
         });

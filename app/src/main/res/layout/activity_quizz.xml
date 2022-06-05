@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.quizz.QuizzActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/logo" />
+
+            <LinearLayout
+                android:id="@+id/l1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pregunta_1"
+                    android:textSize="24sp"
+                    android:textColor="@color/primary_text"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question1"
+                    android:layout_marginTop="16dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/primary_text"/>
+
+                <RadioGroup
+                    android:id="@+id/l1rGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <RadioButton
+                        android:id="@+id/l1rb1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/leguminoso_pepino_y_o_arveja"
+                        android:textColor="@color/primary_text"/>
+                    <RadioButton
+                        android:id="@+id/l1rb2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cebolla_cebolla_y_o_ajo"
+                        android:textColor="@color/primary_text"/>
+                    <RadioButton
+                        android:id="@+id/l1rb3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/baya_albaricoque_y_o_mora"
+                        android:textColor="@color/primary_text"/>
+                    <RadioButton
+                        android:id="@+id/l1rb4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/c_trico_lim_n_y_o_manzana"
+                        android:textColor="@color/primary_text"/>
+                    <RadioButton
+                        android:id="@+id/l1rb5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fragrante_cardamomo_y_o_alcaravea"
+                        android:textColor="@color/primary_text"/>
+                    <RadioButton
+                        android:id="@+id/l1rb6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/floral_flor_de_caf_y_o_t_de_rosa"
+                        android:textColor="@color/primary_text"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/l2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pregunta_2"
+                    android:textSize="24sp"
+                    android:textColor="@color/primary_text"/>
+
+                <TextView
+                    android:id="@+id/tQuestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question2"
+                    android:layout_marginTop="16dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/primary_text"/>
+
+                <RadioGroup
+                    android:id="@+id/l2rGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <RadioButton
+                        android:id="@+id/l2rb1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nuez_man_tostado_y_o_nueces"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l2rb2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/malta_arroz_bals_mico_y_o_tostada"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l2rb3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dulce_avellana_tostada_y_o_almendra_tostada"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l2rb4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/jarabe_miel_y_o_jarabe_maple"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l2rb5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/achocolatado_chocolate_amargo_y_o_chocolate_negro"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l2rb6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vainilla_chocolate_suizo_y_o_mantequilla"
+                        android:textColor="@color/primary_text"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/l3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pregunta_3"
+                    android:textSize="24sp"
+                    android:textColor="@color/primary_text"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question3"
+                    android:layout_marginTop="16dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/primary_text"/>
+
+                <RadioGroup
+                    android:id="@+id/l3rGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <RadioButton
+                        android:id="@+id/l3rb1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ceniza_carbonizado_y_o_quemado"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l3rb2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ahumado_tabaco_y_o_alquitr_n"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l3rb3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/agudo_tomillo_y_o_clavo"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l3rb4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/c_lido_pimienta_y_o_cedro"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l3rb5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/medicinal_mentolado_y_o_alcanfor"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l3rb6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reinoso_agraz_y_o_pino"
+                        android:textColor="@color/primary_text"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/l4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pregunta_4"
+                    android:textSize="24sp"
+                    android:textColor="@color/primary_text"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question4"
+                    android:layout_marginTop="16dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/primary_text"/>
+
+                <RadioGroup
+                    android:id="@+id/l4rGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <RadioButton
+                        android:id="@+id/l4rb1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/acido_agrio_acre_y_o_duro_vinoso_agridulce_y_o_c_trico"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l4rb2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dulce_acido_picante_y_o_punzante_tenso_dulce_y_o_delicado"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l4rb3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/salado_simple_seco_y_o_neutro_agudo_spero_y_o_astringente"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l4rb4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/amargo_spero_alcalino_y_o_c_ustico_acre_fen_lico_y_o_creosota"
+                        android:textColor="@color/primary_text"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/l5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pregunta_5"
+                    android:textSize="24sp"
+                    android:textColor="@color/primary_text"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question5"
+                    android:layout_marginTop="16dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/primary_text"/>
+
+                <RadioGroup
+                    android:id="@+id/l5rGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <RadioButton
+                        android:id="@+id/l5rb1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/acido_agrio_acre_y_o_duro_vinoso_agridulce_y_o_c_trico"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l5rb2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dulce_acido_picante_y_o_punzante_tenso_dulce_y_o_delicado"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l5rb3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/salado_simple_seco_y_o_neutro_agudo_spero_y_o_astringente"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l5rb4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/amargo_spero_alcalino_y_o_c_ustico_acre_fen_lico_y_o_creosota"
+                        android:textColor="@color/primary_text"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/l6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pregunta_6"
+                    android:textSize="24sp"
+                    android:textColor="@color/primary_text"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question6"
+                    android:layout_marginTop="16dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/primary_text"/>
+
+                <RadioGroup
+                    android:id="@+id/l6rGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <RadioButton
+                        android:id="@+id/l6rb1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/grueso_o_mantecoso"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l6rb2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/liso"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l6rb3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/delgado_o_acuoso"
+                        android:textColor="@color/primary_text"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/l7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pregunta_7"
+                    android:textSize="24sp"
+                    android:textColor="@color/primary_text"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question7"
+                    android:layout_marginTop="16dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/primary_text"/>
+
+                <RadioGroup
+                    android:id="@+id/l7rGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <RadioButton
+                        android:id="@+id/l7rb1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pesado"
+                        android:textColor="@color/primary_text"/>
+
+                    <RadioButton
+                        android:id="@+id/l7rb2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ligero"
+                        android:textColor="@color/primary_text"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/submitReplies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="@string/enviar_respuestas" />
+
+            <Button
+                android:id="@+id/exit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/salir" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

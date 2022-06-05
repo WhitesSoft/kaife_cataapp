@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Kaife_cataAPP</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="registrate_con">REGISTRATE CON</string>
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>
@@ -9,7 +8,7 @@
     <string name="fecha_de_nacimiento">Fecha de Nacimiento</string>
     <string name="genero">Genero:</string>
     <string name="male">Masculino</string>
-    <string name="female">Feminino</string>
+    <string name="female">Femenino</string>
     <string name="registrar_cuenta">Registrar cuenta</string>
     <string name="ya_tienes_una_cuenta">¿Ya tienes una cuenta?,</string>
     <string name="inicia_sesion">Inicia Sesion</string>
@@ -28,4 +27,50 @@
     <string name="enviar_c_digo">Enviar código</string>
     <string name="introduzca_el_c_digo_recibido">Introduzca el código recibido</string>
     <string name="verificar_c_digo">Verificar código</string>
+    <string name="cuestionario">Cuestionario</string>
+    <string name="salir">Salir</string>
+    <string name="siguiente">siguiente</string>
+    <string name="pregunta_1">Pregunta 1</string>
+    <string name="pregunta_2">Pregunta 2</string>
+    <string name="pregunta_3">Pregunta 3</string>
+    <string name="pregunta_4">Pregunta 4</string>
+    <string name="pregunta_5">Pregunta 5</string>
+    <string name="pregunta_6">Pregunta 6</string>
+    <string name="pregunta_7">Pregunta 7</string>
+    <string name="question1">Al inhalar la fragancia del café molido su percepción es:</string>
+    <string name="question2">Al inhalar el aroma del café recién preparado su percepción es:</string>
+    <string name="question3">Al sorber el café los vapores retro nasales que detectan son:</string>
+    <string name="question4">Despues de dejar que el café envuelva nuestra lengua pasando por todas nuestras papilas gustativas, clasifique el sabor del café. *Sabores</string>
+    <string name="question5">Pasado un tiempor despues de tomar el café, clasifique el sabor residual. *Sabores</string>
+    <string name="question6">El cuerpo es una sensación en la boca de viscosidad y sedosidad que a menudo se asocia con sabores potentes, calcifíquelo según las siguientes características del contenido de grasa.</string>
+    <string name="question7">El peso que tiene el café en el paladar, cuerpo, calcifíquelo según su percepción.</string>
+    <string name="leguminoso_pepino_y_o_arveja">Leguminoso: pepino y/o arveja.</string>
+    <string name="cebolla_cebolla_y_o_ajo">Cebolla: cebolla y/o ajo.</string>
+    <string name="baya_albaricoque_y_o_mora">Baya: albaricoque y/o mora.</string>
+    <string name="c_trico_lim_n_y_o_manzana">Cítrico: limón y/o manzana.</string>
+    <string name="fragrante_cardamomo_y_o_alcaravea">Fragrante: Cardamomo y/o alcaravea.</string>
+    <string name="floral_flor_de_caf_y_o_t_de_rosa">Floral: Flor de café y/o té de rosa.</string>
+    <string name="nuez_man_tostado_y_o_nueces">Nuez: maní tostado y/o nueces.</string>
+    <string name="malta_arroz_bals_mico_y_o_tostada">Malta: arroz balsámico y/o tostada.</string>
+    <string name="dulce_avellana_tostada_y_o_almendra_tostada">Dulce: avellana tostada y/o almendra tostada.</string>
+    <string name="jarabe_miel_y_o_jarabe_maple">Jarabe: miel y/o jarabe maple.</string>
+    <string name="achocolatado_chocolate_amargo_y_o_chocolate_negro">Achocolatado: chocolate amargo y/o chocolate negro.</string>
+    <string name="vainilla_chocolate_suizo_y_o_mantequilla">Vainilla: chocolate suizo y/o mantequilla.</string>
+    <string name="ceniza_carbonizado_y_o_quemado">Ceniza: carbonizado y/o quemado.</string>
+    <string name="ahumado_tabaco_y_o_alquitr_n">Ahumado: tabaco y/o alquitrán.</string>
+    <string name="agudo_tomillo_y_o_clavo">Agudo: tomillo y/o clavo.</string>
+    <string name="c_lido_pimienta_y_o_cedro">Cálido: pimienta y/o cedro.</string>
+    <string name="medicinal_mentolado_y_o_alcanfor">Medicinal: mentolado y/o alcanfor.</string>
+    <string name="reinoso_agraz_y_o_pino">Reinoso: agraz y/o pino.</string>
+    <string name="acido_agrio_acre_y_o_duro_vinoso_agridulce_y_o_c_trico">Acido: (Agrio: acre y/o duro, Vinoso: agridulce y/o cítrico).</string>
+    <string name="dulce_acido_picante_y_o_punzante_tenso_dulce_y_o_delicado">Dulce: (Acido: picante y/o punzante, Tenso: dulce y/o delicado).</string>
+    <string name="salado_simple_seco_y_o_neutro_agudo_spero_y_o_astringente">Salado: (Simple: seco y/o neutro, Agudo: áspero y/o astringente).</string>
+    <string name="amargo_spero_alcalino_y_o_c_ustico_acre_fen_lico_y_o_creosota">Amargo: (Áspero: Alcalino y/o Cáustico, Acre: Fenólico y/o creosota).</string>
+    <string name="grueso_o_mantecoso">Grueso o mantecoso.</string>
+    <string name="liso">Liso.</string>
+    <string name="delgado_o_acuoso">Delgado o acuoso.</string>
+    <string name="pesado">Pesado.</string>
+    <string name="ligero">Ligero.</string>
+    <string name="enviar_respuestas">Enviar respuestas</string>
+
 </resources>

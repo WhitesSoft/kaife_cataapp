@@ -1,20 +1,27 @@
 package com.darksoft.kaife_cataapp.ui.sign_up;
 
+import static com.google.android.material.button.MaterialButtonToggleGroup.*;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.DatePicker;
 import android.widget.Toast;
 
+import com.darksoft.kaife_cataapp.R;
 import com.darksoft.kaife_cataapp.databinding.ActivitySignUpBinding;
 import com.darksoft.kaife_cataapp.ui.sign_in.SignInActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
@@ -64,12 +71,16 @@ public class SignUpActivity extends AppCompatActivity {
         binding.textSignIn.setOnClickListener(v -> {
             Intent intent = new Intent(this, SignInActivity.class);
             startActivity(intent);
+            finish();
         });
     }
 
     private void registerUser(){
 
         if (validar()){
+
+            binding.btnRegister.setVisibility(View.INVISIBLE);
+            binding.loading.setVisibility(View.VISIBLE);
 
             String uid = UUID.randomUUID().toString();
             String name = binding.etName.getText().toString().trim();
@@ -78,17 +89,13 @@ public class SignUpActivity extends AppCompatActivity {
             String password = binding.etPassword.getText().toString().trim();
             String date = binding.etDate.getText().toString().trim();
 
-            boolean isNumeric =  email.matches("[+-]?\\d*(\\.\\d+)?");
-            if (isNumeric)
-                email = email + "@gmail.com";
-
             HashMap<String, String> datos = new HashMap<>();
             datos.put("uid", uid);
             datos.put("name", name);
             datos.put("surname", surname);
             datos.put("email", email);
-            datos.put("password", password);
             datos.put("date", date);
+            datos.put("genero", genero());
 
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -97,10 +104,12 @@ public class SignUpActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
 
                                 Toast.makeText(SignUpActivity.this, "Cuenta creada correctamente.", Toast.LENGTH_SHORT).show();
-                                db.collection("Users").document(uid).set(datos);
+                                db.collection("Usuarios").document(uid).set(datos);
 
                                 finish();
                             } else {
+                                binding.btnRegister.setVisibility(View.VISIBLE);
+                                binding.loading.setVisibility(View.INVISIBLE);
                                 Toast.makeText(SignUpActivity.this, "No se pudo crear la cuenta.", Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -108,6 +117,17 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
 
+
+    }
+
+    private String genero() {
+
+        int buttonId = binding.btnGroup.getCheckedButtonId();
+
+        if (buttonId == 2131361892)
+            return  "masculino";
+        else
+            return  "femenino";
 
     }
 
@@ -142,6 +162,10 @@ public class SignUpActivity extends AppCompatActivity {
         }
         if (date.isEmpty()) {
             binding.etDate.setError("Debe ingresar su fecha de nacimiento");
+            retorno = false;
+        }
+        if (binding.btnGroup.getCheckedButtonId() == -1){
+            binding.tGenero.setError("Debe seleccionar un género");
             retorno = false;
         }
 
