@@ -31,72 +31,45 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnAnswers"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/respuestas"
+        android:layout_marginBottom="8dp"
         app:layout_constraintTop_toBottomOf="@+id/btnQuizz"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/signOut">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0"/>
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="50dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <com.github.mikephil.charting.charts.PieChart
-                    android:id="@+id/pieChart1"
-                    android:layout_width="match_parent"
-                    android:layout_height="400dp"/>
-
-                <com.github.mikephil.charting.charts.PieChart
-                    android:id="@+id/pieChart2"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_height="400dp"/>
-
-                <com.github.mikephil.charting.charts.PieChart
-                    android:id="@+id/pieChart3"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_height="400dp"/>
-
-                <com.github.mikephil.charting.charts.PieChart
-                    android:id="@+id/pieChart4"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_height="400dp"/>
-
-                <com.github.mikephil.charting.charts.PieChart
-                    android:id="@+id/pieChart5"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_height="400dp"/>
-
-                <com.github.mikephil.charting.charts.PieChart
-                    android:id="@+id/pieChart6"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_height="400dp"/>
-
-                <com.github.mikephil.charting.charts.PieChart
-                    android:id="@+id/pieChart7"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_height="400dp"/>
-
-            </LinearLayout>
+    <Button
+        android:id="@+id/btnGraphics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/gr_ficos"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnAnswers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0"/>
 
 
-        </ScrollView>
-
-    </LinearLayout>
-
+    <Button
+        android:id="@+id/btnStatistics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/estad_sticas"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnGraphics"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0"/>
 
 
     <Button

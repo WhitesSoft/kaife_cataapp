@@ -72,5 +72,10 @@
     <string name="pesado">Pesado.</string>
     <string name="ligero">Ligero.</string>
     <string name="enviar_respuestas">Enviar respuestas</string>
+    <string name="ltimos_pasos">Últimos pasos</string>
+    <string name="continuar">Continuar</string>
+    <string name="respuestas">Respuestas</string>
+    <string name="gr_ficos">Gráficos</string>
+    <string name="estad_sticas">Estadísticas</string>
 
 </resources>

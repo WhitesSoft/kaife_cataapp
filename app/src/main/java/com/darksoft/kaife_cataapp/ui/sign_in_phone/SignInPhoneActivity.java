@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.darksoft.kaife_cataapp.MainActivity;
 import com.darksoft.kaife_cataapp.databinding.ActivitySignInPhoneBinding;
+import com.darksoft.kaife_cataapp.ui.register_user_phone.RegisterUserPhoneActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -67,13 +68,10 @@ public class SignInPhoneActivity extends AppCompatActivity {
                 binding.btnSendCode.setVisibility(View.INVISIBLE);
                 binding.loading.setVisibility(View.VISIBLE);
 
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        binding.btnSendCode.setVisibility(View.VISIBLE);
-                        binding.loading.setVisibility(View.INVISIBLE);
-                    }
-                },120000);
+                new Handler().postDelayed(() -> {
+                    binding.btnSendCode.setVisibility(View.VISIBLE);
+                    binding.loading.setVisibility(View.INVISIBLE);
+                },60000);
 
             }else {
                 Toast.makeText(SignInPhoneActivity.this, "Debe ingresar un número de teléfono", Toast.LENGTH_SHORT).show();
@@ -95,12 +93,9 @@ public class SignInPhoneActivity extends AppCompatActivity {
                 credential = PhoneAuthProvider.getCredential(mVerificationId, code);
                 signInWithPhoneAuthCredential(credential);
 
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        binding.loadingVerify.setVisibility(View.INVISIBLE);
-                        binding.btnVerify.setVisibility(View.VISIBLE);
-                    }
+                new Handler().postDelayed(() -> {
+                    binding.loadingVerify.setVisibility(View.INVISIBLE);
+                    binding.btnVerify.setVisibility(View.VISIBLE);
                 },60000);
 
             }
@@ -112,7 +107,7 @@ public class SignInPhoneActivity extends AppCompatActivity {
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(mAuth)
                         .setPhoneNumber(phoneNumber)       // Phone number to verify
-                        .setTimeout(120L, TimeUnit.SECONDS) // Timeout and unit
+                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
                         .setActivity(this)                 // Activity (for callback binding)
                         .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
                         .build();
@@ -126,16 +121,7 @@ public class SignInPhoneActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
 
                         Toast.makeText(SignInPhoneActivity.this, "Verificación completa", Toast.LENGTH_SHORT).show();
-
-                        String uid = UUID.randomUUID().toString();
-
-                        HashMap<String, String> datos = new HashMap<>();
-                        datos.put("uid", uid);
-                        datos.put("number", number);
-
-                        db.collection("Users").document(uid).set(datos);
-
-                        Intent intent = new Intent(SignInPhoneActivity.this, MainActivity.class);
+                        Intent intent = new Intent(SignInPhoneActivity.this, RegisterUserPhoneActivity.class);
                         startActivity(intent);
                         finish();
 

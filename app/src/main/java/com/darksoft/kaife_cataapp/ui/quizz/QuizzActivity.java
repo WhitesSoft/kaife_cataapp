@@ -1,13 +1,18 @@
 package com.darksoft.kaife_cataapp.ui.quizz;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.darksoft.kaife_cataapp.databinding.ActivityQuizzBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -59,19 +64,56 @@ public class QuizzActivity extends AppCompatActivity {
             question6();
             question7();
 
-            HashMap<String, String>  data = new HashMap<>();
-            data.put("id", user.getUid());
-            data.put("pregunta1", answer1());
-            data.put("pregunta2", answer2());
-            data.put("pregunta3", answer3());
-            data.put("pregunta4", answer4());
-            data.put("pregunta5", answer5());
-            data.put("pregunta6", answer6());
-            data.put("pregunta7", answer7());
+            SharedPreferences preferences = getSharedPreferences("genero", MODE_PRIVATE);
+            String genero = preferences.getString("genero", "NOEXISTE");
 
-            Toast.makeText(this, "Se enviarion sus respuestas.", Toast.LENGTH_SHORT).show();
-            db.collection("Respuestas").document().set(data);
-            finish();
+            //Si existe guardado algo en el sharedPreferences entra
+            if (!genero.equals("NOEXISTE")){
+                HashMap<String, String>  data = new HashMap<>();
+                data.put("id", user.getUid());
+                data.put("genero", genero);
+                data.put("pregunta1", answer1());
+                data.put("pregunta2", answer2());
+                data.put("pregunta3", answer3());
+                data.put("pregunta4", answer4());
+                data.put("pregunta5", answer5());
+                data.put("pregunta6", answer6());
+                data.put("pregunta7", answer7());
+
+                Toast.makeText(this, "Se enviarion sus respuestas.", Toast.LENGTH_SHORT).show();
+                db.collection("Respuestas").document().set(data);
+                finish();
+            }else {
+
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                db.collection("Usuarios").document(user.getEmail()).get().addOnCompleteListener(task -> {
+                    if (task.isSuccessful()){
+                        DocumentSnapshot document = task.getResult();
+
+                        String generoo = document.getString("genero");
+
+                        HashMap<String, String>  data = new HashMap<>();
+                        data.put("id", user.getUid());
+                        data.put("genero", generoo);
+                        data.put("pregunta1", answer1());
+                        data.put("pregunta2", answer2());
+                        data.put("pregunta3", answer3());
+                        data.put("pregunta4", answer4());
+                        data.put("pregunta5", answer5());
+                        data.put("pregunta6", answer6());
+                        data.put("pregunta7", answer7());
+
+                        Toast.makeText(this, "Se enviarion sus respuestas.", Toast.LENGTH_SHORT).show();
+                        db.collection("Respuestas").document(user.getEmail()).set(data);
+                        finish();
+
+                    }
+                });
+
+
+            }
+
 
         }else {
             Toast.makeText(this, "Debe responder todas las preguntas", Toast.LENGTH_SHORT).show();

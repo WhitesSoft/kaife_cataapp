@@ -1,27 +1,24 @@
-package com.darksoft.kaife_cataapp.ui.sign_up;
-
-import static com.google.android.material.button.MaterialButtonToggleGroup.*;
+package com.darksoft.kaife_cataapp.ui.register_user_phone;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.Toast;
 
-import com.darksoft.kaife_cataapp.R;
-import com.darksoft.kaife_cataapp.databinding.ActivitySignUpBinding;
+import com.darksoft.kaife_cataapp.MainActivity;
+import com.darksoft.kaife_cataapp.databinding.ActivityRegisterUserPhoneBinding;
 import com.darksoft.kaife_cataapp.ui.sign_in.SignInActivity;
+import com.darksoft.kaife_cataapp.ui.sign_up.SignUpActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
@@ -30,9 +27,9 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.UUID;
 
-public class SignUpActivity extends AppCompatActivity {
+public class RegisterUserPhoneActivity extends AppCompatActivity {
 
-    private static ActivitySignUpBinding binding;
+    private static ActivityRegisterUserPhoneBinding binding;
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
@@ -42,7 +39,7 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivitySignUpBinding.inflate(getLayoutInflater());
+        binding = ActivityRegisterUserPhoneBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         mAuth = FirebaseAuth.getInstance();
@@ -52,80 +49,74 @@ public class SignUpActivity extends AppCompatActivity {
         buttons();
     }
 
-    private void buttons(){
-
-        binding.back.setOnClickListener(v -> {
-            finish();
-        });
+    private void buttons() {
 
         binding.etDate.setOnClickListener(v -> {
             new DatePickerDialog(this, date, calendar.get(Calendar.YEAR),
                     calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
         });
 
-        binding.btnRegister.setOnClickListener(v -> {
+        binding.btnNext.setOnClickListener(v -> {
             registerUser();
         });
 
-        binding.textSignIn.setOnClickListener(v -> {
-            Intent intent = new Intent(this, SignInActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-            finish();
-        });
     }
 
-    private void registerUser(){
+    private void registerUser() {
 
-        if (validar()){
+        if (validar()) {
 
-            binding.btnRegister.setVisibility(View.INVISIBLE);
+            binding.btnNext.setVisibility(View.INVISIBLE);
             binding.loading.setVisibility(View.VISIBLE);
 
             String uid = UUID.randomUUID().toString();
             String name = binding.etName.getText().toString().trim();
             String surname = binding.etSurname.getText().toString().trim();
-            String email = binding.etEmail.getText().toString().trim();
-            String password = binding.etPassword.getText().toString().trim();
             String date = binding.etDate.getText().toString().trim();
 
             HashMap<String, String> datos = new HashMap<>();
             datos.put("uid", uid);
             datos.put("name", name);
             datos.put("surname", surname);
-            datos.put("email", email);
             datos.put("date", date);
             datos.put("genero", genero());
 
-            mAuth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
+            SharedPreferences preferences = getSharedPreferences("genero", MODE_PRIVATE);
 
-                                Toast.makeText(SignUpActivity.this, "Cuenta creada correctamente.", Toast.LENGTH_SHORT).show();
-                                db.collection("Usuarios").document(email).set(datos);
+            Toast.makeText(RegisterUserPhoneActivity.this, "Cuenta creada correctamente.", Toast.LENGTH_SHORT).show();
+            db.collection("Usuarios").document(uid).set(datos).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
 
-                                finish();
-                            } else {
-                                binding.btnRegister.setVisibility(View.VISIBLE);
-                                binding.loading.setVisibility(View.INVISIBLE);
-                                Toast.makeText(SignUpActivity.this, "No se pudo crear la cuenta.", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
+                    //Guardamos el valor del genero
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("genero", genero());
+                    editor.commit();
+
+                    Intent intent = new Intent(RegisterUserPhoneActivity.this, MainActivity.class);
+                    startActivity(intent);
+
+                    finish();
+                } else {
+                    binding.btnNext.setVisibility(View.VISIBLE);
+                    binding.loading.setVisibility(View.INVISIBLE);
+                    Toast.makeText(RegisterUserPhoneActivity.this, "No se pudo crear la cuenta.", Toast.LENGTH_SHORT).show();
+                }
+            });
+
         }
-
 
 
     }
 
     private String genero() {
-        int id = binding.btnGroup.getCheckedButtonId();
-        if (id == 2131361900)
+
+        int buttonId = binding.btnGroup.getCheckedButtonId();
+
+        if (buttonId == 2131361900)
             return "masculino";
         else
             return "femenino";
+
     }
 
     private boolean validar() {
@@ -133,8 +124,6 @@ public class SignUpActivity extends AppCompatActivity {
 
         String name = binding.etName.getText().toString().trim();
         String surname = binding.etSurname.getText().toString().trim();
-        String email = binding.etEmail.getText().toString().trim();
-        String password = binding.etPassword.getText().toString().trim();
         String date = binding.etDate.getText().toString().trim();
 
         if (name.isEmpty()) {
@@ -145,23 +134,11 @@ public class SignUpActivity extends AppCompatActivity {
             binding.etSurname.setError("Debe ingresar un apellido");
             retorno = false;
         }
-        if (email.isEmpty()) {
-            binding.etEmail.setError("Debe ingresar correo electronico o un teléfono");
-            retorno = false;
-        }
-        if (password.isEmpty()) {
-            binding.etPassword.setError("Debe ingresar una contraseña");
-            retorno = false;
-        }
-        if (password.length() < 6) {
-            binding.etPassword.setError("Debe ingresar una contraseña mayor a 6 caracteres");
-            retorno = false;
-        }
         if (date.isEmpty()) {
             binding.etDate.setError("Debe ingresar su fecha de nacimiento");
             retorno = false;
         }
-        if (binding.btnGroup.getCheckedButtonId() == -1){
+        if (binding.btnGroup.getCheckedButtonId() == -1) {
             binding.tGenero.setError("Debe seleccionar un género");
             retorno = false;
         }
@@ -180,7 +157,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         }
 
-        private void updateCalendar(){
+        private void updateCalendar() {
             String format = "dd/MM/yyyy";
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format, Locale.US);
 
