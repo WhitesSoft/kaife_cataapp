@@ -1,7 +1,5 @@
 package com.darksoft.kaife_cataapp.ui.sign_up;
 
-import static com.google.android.material.button.MaterialButtonToggleGroup.*;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,16 +10,12 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.Toast;
 
-import com.darksoft.kaife_cataapp.R;
 import com.darksoft.kaife_cataapp.databinding.ActivitySignUpBinding;
 import com.darksoft.kaife_cataapp.ui.sign_in.SignInActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
@@ -36,7 +30,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
-
+    private int female = 0, male = 0;
     private final Calendar calendar = Calendar.getInstance();
 
     @Override
@@ -79,6 +73,8 @@ public class SignUpActivity extends AppCompatActivity {
 
         if (validar()){
 
+            checkGenero();
+
             binding.btnRegister.setVisibility(View.INVISIBLE);
             binding.loading.setVisibility(View.VISIBLE);
 
@@ -120,12 +116,19 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
+    private void checkGenero(){
+        if (binding.btnMale.isChecked())
+            male++;
+        if (binding.btnFemale.isChecked())
+            female++;
+    }
+
     private String genero() {
-        int id = binding.btnGroup.getCheckedButtonId();
-        if (id == 2131361900)
+        if (male != 0)
             return "masculino";
-        else
+        if (female != 0)
             return "femenino";
+        return "0";
     }
 
     private boolean validar() {
@@ -161,7 +164,7 @@ public class SignUpActivity extends AppCompatActivity {
             binding.etDate.setError("Debe ingresar su fecha de nacimiento");
             retorno = false;
         }
-        if (binding.btnGroup.getCheckedButtonId() == -1){
+        if (!binding.btnFemale.isChecked() && !binding.btnMale.isChecked()){
             binding.tGenero.setError("Debe seleccionar un género");
             retorno = false;
         }

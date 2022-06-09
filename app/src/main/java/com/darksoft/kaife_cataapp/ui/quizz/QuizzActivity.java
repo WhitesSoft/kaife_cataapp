@@ -1,6 +1,5 @@
 package com.darksoft.kaife_cataapp.ui.quizz;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
@@ -8,8 +7,6 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.darksoft.kaife_cataapp.databinding.ActivityQuizzBinding;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -70,6 +67,7 @@ public class QuizzActivity extends AppCompatActivity {
 
             SharedPreferences preferences = getSharedPreferences("genero", MODE_PRIVATE);
             String genero = preferences.getString("genero", "NOEXISTE");
+
 
             //Si existe guardado algo en el sharedPreferences entra
             if (!genero.equals("NOEXISTE")){

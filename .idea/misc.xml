@@ -4,6 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.17775779376498801" />
+        <entry key="app/src/main/res/drawable/checked_background.xml" value="0.26" />
+        <entry key="app/src/main/res/drawable/gender_background_selector.xml" value="0.26" />
+        <entry key="app/src/main/res/drawable/gender_checked_background.xml" value="0.26" />
+        <entry key="app/src/main/res/drawable/gender_text_selector.xml" value="0.26" />
+        <entry key="app/src/main/res/drawable/gender_unchecked_background.xml" value="0.26" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.26" />
         <entry key="app/src/main/res/drawable/tab_indicator.xml" value="0.2975" />
         <entry key="app/src/main/res/layout/activity_answers.xml" value="0.31302083333333336" />

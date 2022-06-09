@@ -87,29 +87,37 @@
                 android:text="@string/genero"
                 android:textSize="16sp" />
 
-            <com.google.android.material.button.MaterialButtonToggleGroup
+            <RadioGroup
                 android:id="@+id/btnGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                app:singleSelection="true">
+                android:orientation="horizontal">
 
-                <Button
+                <RadioButton
                     android:id="@+id/btnMale"
-                    style="?attr/materialButtonOutlinedStyle"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/male" />
+                    android:layout_height="40dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/gender_background_selector"
+                    android:text="@string/male"
+                    android:textColor="@drawable/gender_text_selector"/>
 
-                <Button
+                <RadioButton
                     android:id="@+id/btnFemale"
-                    style="?attr/materialButtonOutlinedStyle"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
                     android:layout_marginStart="16dp"
-                    android:text="@string/female" />
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/gender_background_selector"
+                    android:text="@string/female"
+                    android:textColor="@drawable/gender_text_selector" />
 
-            </com.google.android.material.button.MaterialButtonToggleGroup>
+            </RadioGroup>
 
             <FrameLayout
                 android:layout_width="wrap_content"
