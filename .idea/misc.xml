@@ -6,10 +6,12 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.17775779376498801" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.26" />
         <entry key="app/src/main/res/drawable/tab_indicator.xml" value="0.2975" />
+        <entry key="app/src/main/res/layout/activity_answers.xml" value="0.31302083333333336" />
         <entry key="app/src/main/res/layout/activity_graphics.xml" value="0.2568376068376068" />
         <entry key="app/src/main/res/layout/activity_graphicsctivity.xml" value="0.31302083333333336" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2703553756185335" />
-        <entry key="app/src/main/res/layout/activity_quizz.xml" value="0.2937438905180841" />
+        <entry key="app/src/main/res/layout/activity_quizz.xml" value="0.28578221588207325" />
+        <entry key="app/src/main/res/layout/activity_quizz_global.xml" value="0.31302083333333336" />
         <entry key="app/src/main/res/layout/activity_register_user_phone.xml" value="0.31302083333333336" />
         <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.31302083333333336" />
         <entry key="app/src/main/res/layout/activity_sign_in_phone.xml" value="0.31302083333333336" />

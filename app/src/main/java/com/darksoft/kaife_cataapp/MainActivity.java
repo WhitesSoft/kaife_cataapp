@@ -9,8 +9,10 @@ import android.widget.Toast;
 
 import com.darksoft.kaife_cataapp.databinding.ActivityMainBinding;
 import com.darksoft.kaife_cataapp.model.AnswerModel;
+import com.darksoft.kaife_cataapp.ui.answers.AnswersActivity;
 import com.darksoft.kaife_cataapp.ui.graphics.GraphicsActivity;
 import com.darksoft.kaife_cataapp.ui.quizz.QuizzActivity;
+import com.darksoft.kaife_cataapp.ui.quizz_global.QuizzGlobalActivity;
 import com.darksoft.kaife_cataapp.ui.sign_in.SignInActivity;
 import com.darksoft.kaife_cataapp.ui.statistics.StatisticsActivity;
 import com.github.mikephil.charting.animation.Easing;
@@ -40,25 +42,18 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        loadUser();
         buttons();
-    }
-
-    private void loadUser() {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        binding.id.setText(user.getUid());
     }
 
     private void buttons() {
         binding.btnQuizz.setOnClickListener(v -> {
-            Intent intent = new Intent(this, QuizzActivity.class);
+            Intent intent = new Intent(this, QuizzGlobalActivity.class);
             startActivity(intent);
         });
 
         binding.btnAnswers.setOnClickListener(v -> {
-            Toast.makeText(this, "respuestas(falta)", Toast.LENGTH_SHORT).show();
-//            Intent intent = new Intent(this, QuizzActivity.class);
-//            startActivity(intent);
+            Intent intent = new Intent(this, AnswersActivity.class);
+            startActivity(intent);
         });
 
         binding.btnGraphics.setOnClickListener(v -> {

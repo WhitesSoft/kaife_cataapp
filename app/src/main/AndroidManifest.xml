@@ -16,9 +16,14 @@
         android:theme="@style/Theme.Kaife_cataAPP"
         tools:targetApi="31">
         <activity
+            android:name=".ui.answers.AnswersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.quizz_global.QuizzGlobalActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.graphics.GraphicsActivity"
             android:exported="false" />
-
         <activity
             android:name=".ui.statistics.StatisticsActivity"
             android:exported="false" />

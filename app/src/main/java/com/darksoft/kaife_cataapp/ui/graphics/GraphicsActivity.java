@@ -1,9 +1,12 @@
 package com.darksoft.kaife_cataapp.ui.graphics;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.darksoft.kaife_cataapp.databinding.ActivityGraphicsBinding;
 import com.github.mikephil.charting.animation.Easing;
@@ -13,8 +16,11 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -31,6 +37,11 @@ public class GraphicsActivity extends AppCompatActivity {
         binding = ActivityGraphicsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.back.setOnClickListener(v -> {
+            finish();
+        });
+
+        loadAllAnswers();
         answer1();
         answer2();
         answer3();
@@ -38,6 +49,12 @@ public class GraphicsActivity extends AppCompatActivity {
         answer5();
         answer6();
         answer7();
+    }
+
+    private void loadAllAnswers(){
+        db.collection("Respuestas").get().addOnSuccessListener(task -> {
+            binding.tAllAnswers.setText(String.valueOf(task.size()));
+        });
     }
 
     private void answer1() {
@@ -58,7 +75,6 @@ public class GraphicsActivity extends AppCompatActivity {
         legend.setDrawInside(false);
         legend.setEnabled(true);
 
-
         ArrayList<String> datos = new ArrayList<>();
 
         //GetData
@@ -68,7 +84,6 @@ public class GraphicsActivity extends AppCompatActivity {
                 datos.add(valor);
             }
 
-            System.out.println(datos);
 
             float pregunta1 = 0, pregunta2 = 0, pregunta3 = 0, pregunta4 = 0, pregunta5 = 0, pregunta6 = 0;
             for(int i = 0; i < datos.size(); i++){
@@ -120,6 +135,7 @@ public class GraphicsActivity extends AppCompatActivity {
 
         });
 
+
     }
 
     private void answer2() {
@@ -149,8 +165,6 @@ public class GraphicsActivity extends AppCompatActivity {
                 String valor = document.getString("pregunta2");
                 datos.add(valor);
             }
-
-            System.out.println(datos);
 
             float pregunta1 = 0, pregunta2 = 0, pregunta3 = 0, pregunta4 = 0, pregunta5 = 0, pregunta6 = 0;
             for(int i = 0; i < datos.size(); i++){
@@ -232,8 +246,6 @@ public class GraphicsActivity extends AppCompatActivity {
                 datos.add(valor);
             }
 
-            System.out.println(datos);
-
             float pregunta1 = 0, pregunta2 = 0, pregunta3 = 0, pregunta4 = 0, pregunta5 = 0, pregunta6 = 0;
             for(int i = 0; i < datos.size(); i++){
                 if (Objects.equals(datos.get(i), "1"))
@@ -314,8 +326,6 @@ public class GraphicsActivity extends AppCompatActivity {
                 datos.add(valor);
             }
 
-            System.out.println(datos);
-
             float pregunta1 = 0, pregunta2 = 0, pregunta3 = 0, pregunta4 = 0;
             for(int i = 0; i < datos.size(); i++){
                 if (Objects.equals(datos.get(i), "1"))
@@ -388,8 +398,6 @@ public class GraphicsActivity extends AppCompatActivity {
                 String valor = document.getString("pregunta5");
                 datos.add(valor);
             }
-
-            System.out.println(datos);
 
             float pregunta1 = 0, pregunta2 = 0, pregunta3 = 0, pregunta4 = 0;
             for(int i = 0; i < datos.size(); i++){
@@ -464,8 +472,6 @@ public class GraphicsActivity extends AppCompatActivity {
                 datos.add(valor);
             }
 
-            System.out.println(datos);
-
             float pregunta1 = 0, pregunta2 = 0, pregunta3 = 0;
             for(int i = 0; i < datos.size(); i++){
                 if (Objects.equals(datos.get(i), "1"))
@@ -536,7 +542,6 @@ public class GraphicsActivity extends AppCompatActivity {
                 datos.add(valor);
             }
 
-            System.out.println(datos);
 
             float pregunta1 = 0, pregunta2 = 0;
             for(int i = 0; i < datos.size(); i++){

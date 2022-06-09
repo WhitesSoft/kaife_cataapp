@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.answers.AnswersActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:contentDescription="@string/app_name" />
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/logo_rojo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/respuesta_1"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/es_un_caf_de_car_cter_con_notas_de_dulce_caramelo_o_jarabe_y_matices_de_plantas_silvestre_y_o_comestibles_n_npregunta_1_opciones_1_2_3_y_5_npregunta_2_opciones_2_y_3_npregunta_3_opciones_3_5_y_6_npregunta_4_opciones_2_y_3_npregunta_5_opciones_2_y_3_npregunta_6_opciones_2_npregunta_7_opciones_1"
+                android:textColor="@color/primary_text"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/respuesta_2"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/es_un_caf_intenso_con_notas_de_dulce_caramelo_acidez_sutil_y_residual_de_chocolate_amargo_n_npregunta_1_opciones_3_4_y_6_npregunta_2_opciones_2_3_5_y_6_npregunta_3_opciones_4_5_y_6_npregunta_4_opciones_1_y_2_npregunta_5_opciones_1_y_2_npregunta_6_opciones_2_npregunta_7_opciones_1"
+                android:textColor="@color/primary_text"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/respuesta_3"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/es_un_caf_balanceado_con_notas_dulces_y_textura_sedosa_n_npregunta_1_opciones_1_2_3_y_5_npregunta_2_opciones_2_y_4_npregunta_3_opciones_3_4_5_y_6_npregunta_4_opciones_2_npregunta_5_opciones_2_npregunta_6_opciones_3_npregunta_7_opciones_1"
+                android:textColor="@color/primary_text"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/respuesta_4"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/es_un_caf_intenso_con_notas_a_nuez_avellana_frutos_secos_y_residual_cremoso_a_chocolate_n_npregunta_1_opciones_3_y_5_npregunta_2_opciones_5_y_6_npregunta_3_opciones_4_y_6_npregunta_4_opciones_3_y_4_npregunta_5_opciones_3_y_4_npregunta_6_opciones_2_npregunta_7_opciones_1"
+                android:textColor="@color/primary_text"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/respuesta_5"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:text="@string/es_un_caf_suave_con_notas_c_tricas_y_exquisita_acidez_n_npregunta_1_opciones_4_y_6_npregunta_2_opciones_2_npregunta_3_opciones_3_4_y_5_npregunta_4_opciones_1_npregunta_5_opciones_1_npregunta_6_opciones_2_npregunta_7_opciones_1"
+                android:textColor="@color/primary_text"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

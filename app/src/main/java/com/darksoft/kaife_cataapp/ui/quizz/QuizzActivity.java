@@ -47,6 +47,10 @@ public class QuizzActivity extends AppCompatActivity {
             submitData();
         });
 
+        binding.back.setOnClickListener(v -> {
+            finish();
+        });
+
         binding.exit.setOnClickListener(v -> {
             finish();
         });
@@ -121,6 +125,7 @@ public class QuizzActivity extends AppCompatActivity {
         
     }
 
+    //Aumentamos en 1 la variable para saber que respondio
     private void question1() {
         if(binding.l1rb1.isChecked())
             p1Answer1++;
@@ -295,6 +300,7 @@ public class QuizzActivity extends AppCompatActivity {
         return "0";
     }
 
+    //Validamos que responda todas las preguntas
     private boolean validar() {
         boolean retorno = true;
 
@@ -324,5 +330,10 @@ public class QuizzActivity extends AppCompatActivity {
         }
 
         return retorno;
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }
