@@ -91,6 +91,8 @@
     <string name="es_un_caf_intenso_con_notas_a_nuez_avellana_frutos_secos_y_residual_cremoso_a_chocolate_n_npregunta_1_opciones_3_y_5_npregunta_2_opciones_5_y_6_npregunta_3_opciones_4_y_6_npregunta_4_opciones_3_y_4_npregunta_5_opciones_3_y_4_npregunta_6_opciones_2_npregunta_7_opciones_1">Es un Café intenso con notas a nuez, avellana, frutos secos y residual cremoso a chocolate.\n \nPregunta 1. Opciones 3 y 5. \nPregunta 2. Opciones 5 y 6. \nPregunta 3. Opciones 4 y 6. \nPregunta 4. Opciones 3 y 4. \nPregunta 5. Opciones 3 y 4. \nPregunta 6. Opciones 2. \nPregunta 7. Opciones 1.</string>
     <string name="es_un_caf_suave_con_notas_c_tricas_y_exquisita_acidez_n_npregunta_1_opciones_4_y_6_npregunta_2_opciones_2_npregunta_3_opciones_3_4_y_5_npregunta_4_opciones_1_npregunta_5_opciones_1_npregunta_6_opciones_2_npregunta_7_opciones_1">Es un Café suave con notas cítricas y exquisita acidez.\n \nPregunta 1. Opciones 4 y 6. \nPregunta 2. Opciones 2. \nPregunta 3. Opciones 3, 4 y 5. \nPregunta 4. Opciones 1. \nPregunta 5. Opciones 1. \nPregunta 6. Opciones 2. \nPregunta 7. Opciones 1.</string>
     <string name="total_de_respuestas">Total de respuestas:</string>
+    <string name="femenino">Femenino:</string>
+    <string name="masculino">Masculino:</string>
 
 
 </resources>
