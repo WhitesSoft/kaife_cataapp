@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.DatePicker;
 import android.widget.Toast;
 
@@ -29,9 +30,8 @@ public class SignUpActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
-
+    private int female = 0, male = 0;
     private final Calendar calendar = Calendar.getInstance();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,13 +63,20 @@ public class SignUpActivity extends AppCompatActivity {
 
         binding.textSignIn.setOnClickListener(v -> {
             Intent intent = new Intent(this, SignInActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
+            finish();
         });
     }
 
     private void registerUser(){
 
         if (validar()){
+
+            checkGenero();
+
+            binding.btnRegister.setVisibility(View.INVISIBLE);
+            binding.loading.setVisibility(View.VISIBLE);
 
             String uid = UUID.randomUUID().toString();
             String name = binding.etName.getText().toString().trim();
@@ -78,17 +85,13 @@ public class SignUpActivity extends AppCompatActivity {
             String password = binding.etPassword.getText().toString().trim();
             String date = binding.etDate.getText().toString().trim();
 
-            boolean isNumeric =  email.matches("[+-]?\\d*(\\.\\d+)?");
-            if (isNumeric)
-                email = email + "@gmail.com";
-
             HashMap<String, String> datos = new HashMap<>();
             datos.put("uid", uid);
             datos.put("name", name);
             datos.put("surname", surname);
             datos.put("email", email);
-            datos.put("password", password);
             datos.put("date", date);
+            datos.put("genero", genero());
 
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -97,10 +100,12 @@ public class SignUpActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
 
                                 Toast.makeText(SignUpActivity.this, "Cuenta creada correctamente.", Toast.LENGTH_SHORT).show();
-                                db.collection("Users").document(uid).set(datos);
+                                db.collection("Usuarios").document(email).set(datos);
 
                                 finish();
                             } else {
+                                binding.btnRegister.setVisibility(View.VISIBLE);
+                                binding.loading.setVisibility(View.INVISIBLE);
                                 Toast.makeText(SignUpActivity.this, "No se pudo crear la cuenta.", Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -109,6 +114,21 @@ public class SignUpActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void checkGenero(){
+        if (binding.btnMale.isChecked())
+            male++;
+        if (binding.btnFemale.isChecked())
+            female++;
+    }
+
+    private String genero() {
+        if (male != 0)
+            return "masculino";
+        if (female != 0)
+            return "femenino";
+        return "0";
     }
 
     private boolean validar() {
@@ -142,6 +162,10 @@ public class SignUpActivity extends AppCompatActivity {
         }
         if (date.isEmpty()) {
             binding.etDate.setError("Debe ingresar su fecha de nacimiento");
+            retorno = false;
+        }
+        if (!binding.btnFemale.isChecked() && !binding.btnMale.isChecked()){
+            binding.tGenero.setError("Debe seleccionar un género");
             retorno = false;
         }
 

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.darksoft.kaife_cataapp.MainActivity;
@@ -60,6 +61,9 @@ public class SignInActivity extends AppCompatActivity {
             String email = binding.etEmailPhone.getText().toString().trim();
             String password = binding.etPassword.getText().toString().trim();
 
+            binding.loading.setVisibility(View.VISIBLE);
+            binding.btnSignIn.setVisibility(View.INVISIBLE);
+
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
@@ -69,6 +73,8 @@ public class SignInActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
                             } else {
+                                binding.loading.setVisibility(View.INVISIBLE);
+                                binding.btnSignIn.setVisibility(View.VISIBLE);
                                 Toast.makeText(SignInActivity.this, "Verifique sus datos.", Toast.LENGTH_SHORT).show();
                             }
                         }
