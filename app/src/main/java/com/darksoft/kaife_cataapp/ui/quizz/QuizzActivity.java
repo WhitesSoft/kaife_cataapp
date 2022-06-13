@@ -83,7 +83,7 @@ public class QuizzActivity extends AppCompatActivity {
                 data.put("pregunta7", answer7());
 
                 Toast.makeText(this, "Se enviarion sus respuestas.", Toast.LENGTH_SHORT).show();
-                db.collection("Respuestas").document().set(data);
+                db.collection("Respuestas").document(user.getUid()).set(data);
                 finish();
             }else {
 
@@ -107,7 +107,7 @@ public class QuizzActivity extends AppCompatActivity {
                         data.put("pregunta7", answer7());
 
                         Toast.makeText(this, "Se enviarion sus respuestas.", Toast.LENGTH_SHORT).show();
-                        db.collection("Respuestas").document(user.getEmail()).set(data);
+                        db.collection("Respuestas").document(user.getUid()).set(data);
                         finish();
 
                     }

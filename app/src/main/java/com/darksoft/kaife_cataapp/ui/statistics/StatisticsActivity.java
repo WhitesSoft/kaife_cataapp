@@ -70,7 +70,6 @@ public class StatisticsActivity extends AppCompatActivity {
                 datos.add(valor);
             }
 
-
             int female = 0, male = 0;
             for(int i = 0; i < datos.size(); i++){
                 if (Objects.equals(datos.get(i), "femenino"))
