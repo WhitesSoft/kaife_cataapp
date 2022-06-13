@@ -80,11 +80,6 @@
     <string name="cata_de_caf">Cata de café</string>
     <string name="cultivo_agr_cola_tradicional">Cultivo Agrícola tradicional</string>
     <string name="cultivo_agroforestal">Cultivo Agroforestal</string>
-    <string name="respuesta_1">Respuesta 1.</string>
-    <string name="respuesta_2">Respuesta 2.</string>
-    <string name="respuesta_3">Respuesta 3.</string>
-    <string name="respuesta_4">Respuesta 4.</string>
-    <string name="respuesta_5">Respuesta 5.</string>
     <string name="es_un_caf_de_car_cter_con_notas_de_dulce_caramelo_o_jarabe_y_matices_de_plantas_silvestre_y_o_comestibles_n_npregunta_1_opciones_1_2_3_y_5_npregunta_2_opciones_2_y_3_npregunta_3_opciones_3_5_y_6_npregunta_4_opciones_2_y_3_npregunta_5_opciones_2_y_3_npregunta_6_opciones_2_npregunta_7_opciones_1">Es un Café de carácter con notas de dulce caramelo o jarabe y matices de plantas silvestre y/o comestibles. \n \nPregunta 1. Opciones 1, 2, 3 y 5. \nPregunta 2. Opciones 2 y 3. \nPregunta 3. Opciones 3, 5, y 6. \nPregunta 4. Opciones 2 y 3. \nPregunta 5. Opciones 2 y 3. \nPregunta 6. Opciones 2. \nPregunta 7. Opciones 1.</string>
     <string name="es_un_caf_intenso_con_notas_de_dulce_caramelo_acidez_sutil_y_residual_de_chocolate_amargo_n_npregunta_1_opciones_3_4_y_6_npregunta_2_opciones_2_3_5_y_6_npregunta_3_opciones_4_5_y_6_npregunta_4_opciones_1_y_2_npregunta_5_opciones_1_y_2_npregunta_6_opciones_2_npregunta_7_opciones_1">Es un Café intenso con notas de dulce caramelo, acidez sutil y residual de chocolate amargo.\n \nPregunta 1. Opciones 3, 4 y 6. \nPregunta 2. Opciones 2 , 3, 5 y 6. \nPregunta 3. Opciones 4, 5, y 6. \nPregunta 4. Opciones 1 y 2. \nPregunta 5. Opciones 1 y 2. \nPregunta 6. Opciones 2. \nPregunta 7. Opciones 1.</string>
     <string name="es_un_caf_balanceado_con_notas_dulces_y_textura_sedosa_n_npregunta_1_opciones_1_2_3_y_5_npregunta_2_opciones_2_y_4_npregunta_3_opciones_3_4_5_y_6_npregunta_4_opciones_2_npregunta_5_opciones_2_npregunta_6_opciones_3_npregunta_7_opciones_1">Es un Café balanceado con notas dulces y textura sedosa.\n \nPregunta 1. Opciones 1, 2, 3 y 5. \nPregunta 2. Opciones 2 y 4. \nPregunta 3. Opciones 3, 4, 5, y 6. \nPregunta 4. Opciones 2. \nPregunta 5. Opciones 2. \nPregunta 6. Opciones 3. \nPregunta 7. Opciones 1.</string>
@@ -93,6 +88,12 @@
     <string name="total_de_respuestas">Total de respuestas:</string>
     <string name="femenino">Femenino:</string>
     <string name="masculino">Masculino:</string>
+    <string name="tus_respuestas_son">Tú respuesta es la opción:</string>
+    <string name="respuesta_1">Es un Café de carácter con notas de dulce caramelo o jarabe y matices de plantas silvestre y/o comestibles.</string>
+    <string name="respuesta_2">Es un Café intenso con notas de dulce caramelo, acidez sutil y residual de chocolate amargo.</string>
+    <string name="respuesta_3">Es un Café balanceado con notas dulces y textura sedosa.</string>
+    <string name="respuesta_4">Es un Café intenso con notas a nuez, avellana, frutos secos y residual cremoso a chocolate.</string>
+    <string name="respuesta_5">Es un Café suave con notas cítricas y exquisita acidez.</string>
 
 
 </resources>
