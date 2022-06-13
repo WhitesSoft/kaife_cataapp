@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.17775779376498801" />
+        <entry key="app/src/main/res/drawable/background_information.xml" value="0.26" />
         <entry key="app/src/main/res/drawable/checked_background.xml" value="0.26" />
         <entry key="app/src/main/res/drawable/gender_background_selector.xml" value="0.26" />
         <entry key="app/src/main/res/drawable/gender_checked_background.xml" value="0.26" />

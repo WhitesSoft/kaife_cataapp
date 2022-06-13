@@ -94,6 +94,7 @@
     <string name="respuesta_3">Es un Café balanceado con notas dulces y textura sedosa.</string>
     <string name="respuesta_4">Es un Café intenso con notas a nuez, avellana, frutos secos y residual cremoso a chocolate.</string>
     <string name="respuesta_5">Es un Café suave con notas cítricas y exquisita acidez.</string>
+    <string name="information_cata">Indicaciones para realizar la cata. \n\nAspectos del café a identificar, limpieza, dulzor, acidez, sensación en boca y regusto, para lo cual se necesita. \nTener taza capacidad para 200 ml, de preferencia material cerámica o vidrio templado, ya que la proporción adecuada es de 8,25 gramos de café por 150 ml de agua, la temperatura del agua debe de ser de 93°. \nLa cata se hace en tres tiempos, café caliente, tibio y frío. Así podrás distinguir en mayor escala las verdaderas notas de sabores y aromas del café.</string>
 
 
 </resources>
