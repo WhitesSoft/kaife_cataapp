@@ -38,13 +38,6 @@
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/logo_rojo" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/pregunta_1"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -119,14 +112,6 @@
                 android:textSize="16sp"
                 android:visibility="gone"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="@string/pregunta_2"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -199,14 +184,6 @@
                 android:textColor="@color/primary_text"
                 android:textSize="16sp"
                 android:visibility="gone"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="@string/pregunta_3"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -281,14 +258,6 @@
                 android:textSize="16sp"
                 android:visibility="gone"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="@string/pregunta_4"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -361,14 +330,6 @@
                 android:textColor="@color/primary_text"
                 android:textSize="16sp"
                 android:visibility="gone"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="@string/pregunta_5"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -443,14 +404,6 @@
                 android:textSize="16sp"
                 android:visibility="gone"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="@string/pregunta_6"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -523,14 +476,6 @@
                 android:textColor="@color/primary_text"
                 android:textSize="16sp"
                 android:visibility="gone"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="@string/pregunta_7"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -605,6 +550,12 @@
                 android:textColor="@color/primary_text"
                 android:textSize="16sp"
                 android:visibility="gone"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="50dp"/>
 
         </LinearLayout>
 

@@ -87,7 +87,7 @@ public class QuizzActivity extends AppCompatActivity {
                 finish();
             }else {
 
-                //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                 db.collection("Usuarios").document(user.getEmail()).get().addOnCompleteListener(task -> {
                     if (task.isSuccessful()){
