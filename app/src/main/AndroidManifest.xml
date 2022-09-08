@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Kaife_cataAPP"
         tools:targetApi="31">
         <activity
+            android:name=".ui.answers_after_quizz.AnswersAfterQuizzActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.answers.AnswersActivity"
             android:exported="false" />
         <activity

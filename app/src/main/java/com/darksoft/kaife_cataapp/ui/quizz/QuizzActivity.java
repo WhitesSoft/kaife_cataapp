@@ -2,11 +2,14 @@ package com.darksoft.kaife_cataapp.ui.quizz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.darksoft.kaife_cataapp.R;
 import com.darksoft.kaife_cataapp.databinding.ActivityQuizzBinding;
+import com.darksoft.kaife_cataapp.ui.answers_after_quizz.AnswersAfterQuizzActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -83,7 +86,9 @@ public class QuizzActivity extends AppCompatActivity {
                 data.put("pregunta7", answer7());
 
                 Toast.makeText(this, "Se enviarion sus respuestas.", Toast.LENGTH_SHORT).show();
+                calcularRespuesta();
                 db.collection("Respuestas").document(user.getUid()).set(data);
+                //startActivity(new Intent(this, AnswersAfterQuizzActivity.class));
                 finish();
             }else {
 
@@ -107,7 +112,9 @@ public class QuizzActivity extends AppCompatActivity {
                         data.put("pregunta7", answer7());
 
                         Toast.makeText(this, "Se enviarion sus respuestas.", Toast.LENGTH_SHORT).show();
+                        calcularRespuesta();
                         db.collection("Respuestas").document(user.getUid()).set(data);
+                        //startActivity(new Intent(this, AnswersAfterQuizzActivity.class));
                         finish();
 
                     }
@@ -121,6 +128,140 @@ public class QuizzActivity extends AppCompatActivity {
             Toast.makeText(this, "Debe responder todas las preguntas", Toast.LENGTH_SHORT).show();
         }
         
+    }
+
+    private void calcularRespuesta(){
+
+        if(answer1().equals("1") && answer2().equals("1") && answer3().equals("3") && answer4().equals("2")
+                && answer5().equals("2") && answer6().equals("2") && answer7().equals("1")){
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "11");
+            startActivity(intent);
+        }
+
+        if(answer1().equals("1") && answer2().equals("1") && answer3().equals("3") && answer4().equals("2")
+                && answer5().equals("2") && answer6().equals("2") && answer7().equals("2")){
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "12");
+            startActivity(intent);
+        }
+
+        if(answer1().equals("3") && answer2().equals("5") && answer3().equals("4") && answer4().equals("2")
+                && answer5().equals("2") && answer6().equals("1") && answer7().equals("1")){
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "21");
+            startActivity(intent);
+        }
+
+        if(answer1().equals("3") && answer2().equals("5") && answer3().equals("4") && answer4().equals("2")
+                && answer5().equals("2") && answer6().equals("1") && answer7().equals("2")){
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "22");
+            startActivity(intent);
+        }
+
+        if(answer1().equals("6") && answer2().equals("3") && answer3().equals("6") && answer4().equals("2")
+                && answer5().equals("2") && answer6().equals("3") && answer7().equals("1")){
+
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "31");
+            startActivity(intent);
+        }
+
+        if(answer1().equals("6") && answer2().equals("3") && answer3().equals("6") && answer4().equals("2")
+                && answer5().equals("2") && answer6().equals("3") && answer7().equals("2")){
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "32");
+            startActivity(intent);
+        }
+
+        if(answer1().equals("2") && answer2().equals("4") && answer3().equals("4") && answer4().equals("1")
+                && answer5().equals("2") && answer6().equals("2") && answer7().equals("1")){
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "41");
+            startActivity(intent);
+        }
+
+        if(answer1().equals("2") && answer2().equals("4") && answer3().equals("4") && answer4().equals("1")
+                && answer5().equals("2") && answer6().equals("2") && answer7().equals("1")){
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "42");
+            startActivity(intent);
+        }
+
+        if(answer1().equals("4") && answer2().equals("6") && answer3().equals("5") && answer4().equals("3")
+                && answer5().equals("1") && answer6().equals("2") && answer7().equals("1")){
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "51");
+            startActivity(intent);
+        }
+
+        if(answer1().equals("4") && answer2().equals("6") && answer3().equals("5") && answer4().equals("3")
+                && answer5().equals("1") && answer6().equals("2") && answer7().equals("2")){
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "52");
+            startActivity(intent);
+        }
+
+        if(answer1().equals("5") && answer2().equals("4") && answer3().equals("3") && answer4().equals("2")
+                && answer5().equals("3") && answer6().equals("1") && answer7().equals("1")){
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "61");
+            startActivity(intent);
+        }
+
+        if(answer1().equals("5") && answer2().equals("4") && answer3().equals("3") && answer4().equals("2")
+                && answer5().equals("3") && answer6().equals("1") && answer7().equals("2")){
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "62");
+            startActivity(intent);
+        }
+
+        if(answer1().equals("1") && answer2().equals("1") && answer3().equals("1") && answer4().equals("1")
+                && answer5().equals("1") && answer6().equals("1") && answer7().equals("1")){
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "71");
+            startActivity(intent);
+        }
+
+        if(answer1().equals("2") && answer2().equals("2") && answer3().equals("2") && answer4().equals("2")
+                && answer5().equals("2") && answer6().equals("2") && answer7().equals("2")){
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "81");
+            startActivity(intent);
+        }
+
+        if(answer1().equals("3") && answer2().equals("3") && answer3().equals("3") && answer4().equals("3")
+                && answer5().equals("3") && answer6().equals("3") && answer7().equals("1")){
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "91");
+            startActivity(intent);
+        }
+
+        if(answer1().equals("4") && answer2().equals("4") && answer3().equals("4") && answer4().equals("4")
+                && answer5().equals("4") && answer6().equals("1") && answer7().equals("2")){
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "101");
+            startActivity(intent);
+        }
+
+        if(answer1().equals("5") && answer2().equals("5") && answer3().equals("5") && answer4().equals("1")
+                && answer5().equals("1") && answer6().equals("2") && answer7().equals("1")){
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "111");
+            startActivity(intent);
+        }
+
+        if(answer1().equals("6") && answer2().equals("6") && answer3().equals("6") && answer4().equals("2")
+                && answer5().equals("2") && answer6().equals("3") && answer7().equals("2")){
+            Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
+            intent.putExtra("respuesta", "121");
+            startActivity(intent);
+        }
+
+
+
+
     }
 
     //Aumentamos en 1 la variable para saber que respondio

@@ -7,4 +7,10 @@
     <color name="secundary_text">#9B9A9D</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="rojo">#d52629</color>
+    <color name="azul">#4f71ab</color>
+    <color name="cafe">#b66833</color>
+    <color name="amarillo">#BEAA41</color>
+
 </resources>
