@@ -203,14 +203,14 @@ public class QuizzActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
-        if(answer1().equals("5") && answer2().equals("4") && answer3().equals("3") && answer4().equals("2")
+        if(answer1().equals("5") && answer2().equals("4") && answer3().equals("2") && answer4().equals("2")
                 && answer5().equals("3") && answer6().equals("1") && answer7().equals("1")){
             Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
             intent.putExtra("respuesta", "61");
             startActivity(intent);
         }
 
-        if(answer1().equals("5") && answer2().equals("4") && answer3().equals("3") && answer4().equals("2")
+        if(answer1().equals("5") && answer2().equals("4") && answer3().equals("2") && answer4().equals("2")
                 && answer5().equals("3") && answer6().equals("1") && answer7().equals("2")){
             Intent intent = new Intent(this, AnswersAfterQuizzActivity.class);
             intent.putExtra("respuesta", "62");

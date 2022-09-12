@@ -63,7 +63,7 @@ public class SignInPhoneActivity extends AppCompatActivity {
 
             number = binding.etPhone.getText().toString().trim();
             if (!number.isEmpty()){
-                startPhoneNumberVerification("+591" + number);
+                startPhoneNumberVerification("+57" + number);
 
                 binding.btnSendCode.setVisibility(View.INVISIBLE);
                 binding.loading.setVisibility(View.VISIBLE);
